@@ -1,5 +1,8 @@
 
 import { Sequelize } from 'sequelize-typescript';
+import { Shift } from '../shifts/entities/shift.entity';
+import { User } from './entities/solid.entity';
+import { Assignment } from 'src/assignments/entities/assignment.entity';
 
 export const databaseProviders = [
   {
@@ -13,6 +16,7 @@ export const databaseProviders = [
         password: "951753",
         database: 'solides',
       });
+      sequelize.addModels([User, Shift,Assignment]);
       await sequelize.sync();
       return sequelize;
     },
