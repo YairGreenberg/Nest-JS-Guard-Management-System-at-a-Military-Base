@@ -1,0 +1,35 @@
+
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: nest_solid_my_sql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 951753
+      MYSQL_DATABASE: solides
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypass
+      TZ: Asia/Jerusalem
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: nest_solid_my_phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: 951753
+      TZ: Asia/Jerusalem
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+
+volumes:
+  db_data:
