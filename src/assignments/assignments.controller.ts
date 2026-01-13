@@ -18,11 +18,11 @@ export class AssignmentsController {
         return this.assignmentsService.create(createAssignmentDto);
     }
 
-    @Get()
-    @Roles(Role.Admin, Role.SuperAdmin, Role.User)
-    findAll() {
-        return this.assignmentsService.findAll();
-    }
+    // @Get()
+    // @Roles(Role.Admin, Role.SuperAdmin, Role.User)
+    // findAll() {
+    //     return this.assignmentsService.findAll();
+    // }
 
     @Get('my-shifts')
     @Roles(Role.User, Role.Admin, Role.SuperAdmin)

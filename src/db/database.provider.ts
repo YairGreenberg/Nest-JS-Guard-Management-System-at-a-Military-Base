@@ -1,7 +1,7 @@
 
 import { Sequelize } from 'sequelize-typescript';
 import { Shift } from '../shifts/entities/shift.entity';
-import { User } from './entities/solid.entity';
+import { User } from 'src/users/entities/user.entity';
 import { Assignment } from 'src/assignments/entities/assignment.entity';
 
 export const databaseProviders = [

@@ -1,4 +1,4 @@
-import { User } from "src/db/entities/solid.entity";
+import { User } from "./user.entity"
 
 export const userProviders = [
     {
