@@ -1,6 +1,8 @@
 import { Controller, Post, Body, Get, Delete, Param, BadRequestException } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { RegisterDto } from 'src/auth/dto/register.dto';
+import { RolesGuard } from 'src/auth/guard';
+import { Roles } from 'src/auth/roles.decorator';
 
 @Controller('users')
 export class UsersController {

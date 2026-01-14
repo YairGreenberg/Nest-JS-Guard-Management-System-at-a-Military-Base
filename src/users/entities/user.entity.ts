@@ -9,7 +9,7 @@ export class User extends Model {
         unique: true,
         allowNull: false,
     })
-    username: string;
+    username!: string;
 
     @Column({
         type: DataType.STRING,
@@ -19,13 +19,13 @@ export class User extends Model {
             isEmail: true,
         },
     })
-    email: string;
+    email!: string;
 
     @Column({
         type: DataType.STRING,
         allowNull: false,
     })
-    password: string;
+    password!: string;
 
     @Column({
         type: DataType.ENUM(...Object.values(Role)),
